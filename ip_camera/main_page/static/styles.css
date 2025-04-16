@@ -1,0 +1,73 @@
+/* Remove default list styling */
+ul {
+    list-style-type: none;  /* Removes bullet points from <ul> */
+    padding: 0;             /* Remove padding */
+    margin: 0;              /* Remove margin */
+}
+
+/* Style the container for each image and its details */
+.image-item {
+    margin-bottom: 20px;       /* Space between items */
+    padding: 10px;             /* Padding around each item */
+    border: 1px solid #ccc;   /* Light gray border */
+    border-radius: 8px;       /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    display: flex;             /* Align image and details in a row */
+    flex-direction: column;    /* Stack title, timestamp, and image vertically */
+    align-items: center;       /* Center items horizontally */
+}
+
+/* Style each image */
+.camera-image {
+    width: 200px;      /* Set the width of the image */
+    height: auto;      /* Maintain the aspect ratio of the image */
+    margin-top: 10px;  /* Space above the image */
+    border-radius: 4px; /* Rounded corners for the image */
+}
+
+/* Style the list items (title and timestamp) */
+li {
+    text-align: center;  /* Center-align the text */
+    font-size: 16px;     /* Set the font size */
+    color: #333;         /* Dark text color */
+}
+
+strong {
+    font-size: 18px;  /* Make the title bold and slightly larger */
+    color: #000;      /* Darker color for the title */
+}
+
+p {
+    margin: 5px 0;    /* Add margin between the elements */
+    color: #666;      /* Lighter color for the timestamp */
+}
+
+.image_div {
+    border: 1px solid #000;   /* Light gray border */
+    border-radius: 5px;       /* Rounded corners */
+    display: flex;             /* Align image and details in a row */
+    flex-direction: row;    /* Stack title, timestamp, and image vertically */
+    justify-content: space-between;
+    margin: 5px ;
+}
+
+.opis_div {
+    display: flex;             /* Align image and details in a row */
+    flex-direction: column;    /* Stack title, timestamp, and image vertically */
+
+    margin: 5px ;
+}
+
+.my_button{
+    border: 1px solid #000; 
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.save_enabled {
+    background-color: red;
+}
+
+.save_disabled {
+    background-color: green;
+}

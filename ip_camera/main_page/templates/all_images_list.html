@@ -1,0 +1,35 @@
+{% extends  'base.html' %}
+{% block content %} 
+
+
+
+
+
+<h1>Saved images</h1>
+
+
+<ul>
+    {% for item in img_list %}
+
+    <div class="image_div">
+
+    <div class="opis_div">
+        <p>Cause of save: <b>{{item.title}}</b> </p>
+        <p>Time: <b>{{item.timestamp}}</b> </p>
+        <p>Imgae: <b>{{item.image.url}}</b> </p>
+   </div>
+
+       <a style="display: flex; justify-content: right;" href="{{ item.image.url }}" target="_blank"> <img src="{{ item.image.url }}" alt="Camera Stream"  width="20%" height="100%"/> </a>
+    
+    </div>
+
+
+    {% endfor %}
+</ul>
+
+
+
+
+
+
+{% endblock %}

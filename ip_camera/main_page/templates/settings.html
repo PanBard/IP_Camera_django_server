@@ -1,0 +1,102 @@
+{% extends  'base.html' %}
+{% block content %} 
+
+
+
+
+
+<h1>Settings</h1>
+
+    <div class="image_div">
+        
+        Movement_detection:  <b>{{settings.movement_detection}}</b> 
+
+        <form method="POST" action="{% url 'toggle_movement_detection' %}">
+            {% csrf_token %}
+            <button class="my_button" type="submit">
+                {% if settings.movement_detection %}
+                    Disable Movement Detection
+                {% else %}
+                    Enable Movement Detection
+                {% endif %}
+            </button>
+        </form>
+
+
+        Saving movement_detection images:  <b>{{settings.movement_detection_db_save}}</b> 
+
+        <form method="POST" action="{% url 'toggle_movement_detection_db_save' %}">
+            {% csrf_token %}
+            <button class="my_button {% if settings.movement_detection_db_save %}save_enabled{% else %}save_disabled{% endif %}" type="submit"  >
+                {% if settings.movement_detection_db_save %}
+                    Disable Saving
+                {% else %}
+                    Enable Saving
+                {% endif %}
+            </button>
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <div class="image_div">
+
+        Face_detection:  <b>{{settings.face_detection}}</b> 
+
+        <form method="POST" action="{% url 'toggle_face_detection' %}">
+        {% csrf_token %}
+        <button class="my_button" type="submit">
+            {% if settings.face_detection %}
+                Disable Face Detection
+            {% else %}
+                Enable Face Detection
+            {% endif %}
+        </button>
+        </form>
+
+        Saving face_detection images:  <b>{{settings.face_detection_db_save}}</b> 
+
+        <form method="POST" action="{% url 'toggle_face_detection_db_save' %}">
+        {% csrf_token %}
+        <button class="my_button" type="submit">
+            {% if settings.face_detection_db_save %}
+                Disable Saving
+            {% else %}
+                Enable Saving
+            {% endif %}
+        </button>
+        </form>
+
+    </div>
+
+
+
+
+
+    <div class="image_div">
+            
+        Frame_process_interval:  <b>{{settings.frame_process_interval}}</b> 
+
+    <form method="POST" action="{% url 'change_frame_process_interval' %}">
+    {% csrf_token %}
+
+    <input type="number" name="frame_process_interval" value="{{ settings.frame_process_interval }}" min="0" step="0.1" />
+    <button class="my_button" type="submit">Set</button>
+    </form>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+
+{% endblock %}

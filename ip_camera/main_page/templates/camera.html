@@ -1,0 +1,10 @@
+{% extends  'base.html' %}
+
+{% block content %} 
+<img src="{% url 'video_feed' %}" alt="Camera Stream"    width="100%"    height="auto"/>
+
+<form method="POST" action="{% url 'save_image' %}">
+    {% csrf_token %}
+    <button type="submit">Capture Image</button>
+</form>
+{% endblock %}
